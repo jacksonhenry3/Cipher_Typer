@@ -6,15 +6,18 @@
 		morseToEnglish[englishToMorse[letter]] = letter;
 	}
 
-	function displayResult()
-	{
-		a = document.getElementById("englishToMorse").value
+	initial_val = document.getElementById("englishToMorse").value
 		if (window.location.hash !='')
 		{
-			a = window.location.hash.replace('#','').replace(/_/g, ' ');
-			document.getElementById("englishToMorse").value = a
+			initial_val = window.location.hash.replace('#','').replace(/_/g, ' ');
+			document.getElementById("englishToMorse").value = initial_val
 		}
+
+	function displayResult()
+	{	
+		a = document.getElementById("englishToMorse").value
 		b = ''
+		window.location.hash = "#"+a.replace(/ /g, '_');
 		a =  a.toUpperCase()
 		for (var i = 0; i < a.length; i++) {
 			b = b+englishToMorse[a[i]]+' '
@@ -77,6 +80,10 @@
 			};
 			window.setTimeout(function(){document.getElementById("listen").innerHTML = 'Listen'},Morse.length*.09*n*1000)
 			}
+		}
+
+		function share(){
+
 		}
 	
 
