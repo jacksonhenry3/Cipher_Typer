@@ -9,6 +9,11 @@
 	function displayResult()
 	{
 		a = document.getElementById("englishToMorse").value
+		if (window.location.hash !='')
+		{
+			a = window.location.hash.replace('#','');
+			document.getElementById("englishToMorse").value = a
+		}
 		b = ''
 		a =  a.toUpperCase()
 		for (var i = 0; i < a.length; i++) {
@@ -17,9 +22,6 @@
 		document.getElementById("morseToEnglish").innerHTML = b
 	};
 	setInterval(displayResult,50);
-	init()
-
-
 	
 	var context;
 	window.addEventListener('load', init, false);
