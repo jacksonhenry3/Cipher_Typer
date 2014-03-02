@@ -112,11 +112,11 @@ function displayResult(cipher,direction)
 			for (var i = 0; i < Morse.length; i++) {
 				if (Morse[i] === '.')
 				{
-					note(Begining+i*.13*n,.03*n,500)
+					note(Begining+i*.13*n,.03*n,440)
 				};
 				if (Morse[i] === '-')
 				{
-					note(Begining+i*.13*n,.09*n,500)
+					note(Begining+i*.13*n,.09*n,440)
 				};
 				if (Morse[i] === ' ')
 				{
@@ -130,9 +130,6 @@ function displayResult(cipher,direction)
 			window.setTimeout(function(){document.getElementById("listen").innerHTML = 'Listen'},Morse.length*.13*n*1000)
 			}
 		}
-
-//http://patorjk.com/blog/2012/07/22/tone-playing-experiment-with-html5s-web-audio-api/
-
 
 
 setInterval(
