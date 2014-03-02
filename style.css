@@ -34,11 +34,6 @@ textarea
 	width:40%;
 }
 
-textarea:before
-{
-	content:attr(data-title);
-}
-
 textarea:focus, input:focus, button:focus{
     outline: 0;
 }
@@ -115,19 +110,18 @@ button:active
 }
 
 @media(max-width: 500px){
-	textarea
-	{
+	textarea{
 		min-width: 0px;
 		width:85%;
+		font-size: 19px;
 	}
 
-	h1
-	{
+	h1{
 		font-size: 50px;
+		margin:0px;
 	}
-	button
 
-	{
+	button{
 		margin-top: 10px;
 	}
 }
