@@ -1,16 +1,19 @@
 /* javascript goes here */
-ab = document.getElementById("1");
+a = document.getElementById("1");
 
-ab.onclick = openClose
+b = document.getElementById("a");
 
-function openClose(){
-	if (ab.className.indexOf("down") == -1)
+a.onclick = function(){openClose(a)}
+b.onclick = function(){openClose(b)}
+
+function openClose(el){
+	if (el.className.indexOf("down") == -1)
 	{
-		ab.className += ' down'
+		el.className += ' down'
 	}
 
-	else if (ab.className.indexOf("down") != -1)
+	else if (el.className.indexOf("down") != -1)
 	{
-		ab.className = ab.className.replace(/ down/g, '')
+		el.className = el.className.replace(/ down/g, '')
 	}
 }

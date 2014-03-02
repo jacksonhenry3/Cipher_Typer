@@ -1,7 +1,21 @@
 /*Initialize*/
+#a
+{
+  position: relative:;
+  top:175px;
+}
+body
+{
+  margin:0px;
+  text-align: center;
+  margin-top:20px;
+}
 ul
 {
   font-family: 'Open Sans', sans-serif;
+  margin:0px;
+  padding:0px;
+  margin:0px auto;
 }
 
 ul.menu
@@ -78,7 +92,7 @@ ul.menu li ul.sub-menu
   visibility: hidden;
   opacity: 0;
   position: absolute;
-  top: 190%;
+  top: 150%;
   left: 0;
   transition: all .5s;
 }
