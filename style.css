@@ -63,7 +63,6 @@ button
 	border-radius: 4px;
 	border-bottom: 3px solid rgba(0,0,0,.3);
 	padding:20px;
-	padding-right:30px;
 	padding-top:10px;
 	padding-bottom:10px;
 	font-size: 25px;
@@ -84,8 +83,8 @@ button:active
 
 #listen
 {
+	padding-right:30px;
 	position: relative;
-	
 }
 
 #listen:after

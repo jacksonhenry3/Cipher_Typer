@@ -11,7 +11,7 @@
 		a = document.getElementById("englishToMorse").value
 		if (window.location.hash !='')
 		{
-			a = window.location.hash.replace('#','');
+			a = window.location.hash.replace('#','').replace(/_/g, ' ');
 			document.getElementById("englishToMorse").value = a
 		}
 		b = ''
@@ -60,11 +60,11 @@
 			for (var i = 0; i < Morse.length; i++) {
 				if (Morse[i] === '.')
 				{
-					note(Begining+i*.09*n,.03*n,700)
+					note(Begining+i*.09*n,.03*n,500)
 				};
 				if (Morse[i] === '-')
 				{
-					note(Begining+i*.09*n,.09*n,700)
+					note(Begining+i*.09*n,.09*n,500)
 				};
 				if (Morse[i] === ' ')
 				{
