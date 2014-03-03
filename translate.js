@@ -103,9 +103,9 @@ function displayResult(cipher,direction)
 
 	//this function will play morse code as audio
 	function listen(){
-		var listenButton = document.getElementById("listen");
+		var listenButton = document.getElementById("listenButton");
 		if (listenButton.innerHTML == 'Listen'){
-			document.getElementById("listen").innerHTML = 'playing';
+			document.getElementById("listenButton").innerHTML = 'playing';
 			Morse = document.getElementById("code").value
 			Begining = context.currentTime;
 			n=1

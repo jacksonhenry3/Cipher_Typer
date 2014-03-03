@@ -1,0 +1,163 @@
+html,
+body,
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style-type: none; }
+
+.menu {
+  display: inline-block;
+  position: relative; }
+  .menu li {
+    display: inline-block;
+    position: relative; }
+  .menu .title {
+    cursor: pointer;
+    background-color: #27ae60;
+    display: inline-block;
+    text-align: center;
+    padding: 10px;
+    width: 200px;
+    color: white;
+    border-radius: 5px;
+    border-bottom: 3px solid rgba(0, 0, 0, 0.3); }
+  .menu .sub-menu {
+    position: absolute;
+    top: 150%;
+    left: 0;
+    background-color: #27ae60;
+    border-radius: 5px;
+    overflow: hidden;
+    border-bottom: 3px solid rgba(0, 0, 0, 0.3);
+    visibility: hidden;
+    opacity: 0;
+    transition: all .5s; }
+    .menu .sub-menu li {
+      display: inline-block;
+      width: 200px;
+      padding: 10px;
+      text-align: center;
+      color: white;
+      cursor: pointer;
+      transition: background-color .3s; }
+    .menu .sub-menu li:hover {
+      background-color: rgba(0, 0, 0, 0.1); }
+
+.menu:after {
+  position: absolute;
+  left: 85%;
+  top: 40%;
+  content: '';
+  width: 0;
+  height: 0;
+  border-top: 0px solid transparent;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-bottom: 7px solid white;
+  transition: all .5s; }
+
+.down .sub-menu {
+  visibility: visible;
+  display: block;
+  top: 120%;
+  opacity: 1; }
+
+.down:after {
+  width: 0;
+  height: 0;
+  border-bottom: 0px solid transparent;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 7px solid white; }
+
+button {
+  margin-top: 40px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  font-family: "Raleway", sans-serif;
+  background-color: #27ae60;
+  border: none;
+  border-radius: 4px;
+  border-bottom: 3px solid rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 25px;
+  color: white;
+  cursor: pointer;
+  transition: background-color .3s; }
+
+button:hover {
+  background-color: #38bf71; }
+
+button:active {
+  background-color: #169d50; }
+
+#listenButton {
+  padding-right: 30px;
+  position: relative; }
+
+#listenButton:after {
+  position: absolute;
+  content: '';
+  width: 0;
+  height: 0;
+  right: 100%;
+  top: 19px;
+  border-top: 7px solid transparent;
+  border-bottom: 7px solid transparent;
+  border-left: 7px solid white;
+  opacity: 0;
+  transition: right .3s, opacity .3s; }
+
+#listenButton:hover:after {
+  right: 10px;
+  opacity: 1; }
+
+@media (max-width: 500px) {
+  textarea {
+    min-width: 0px;
+    width: 85%;
+    font-size: 19px; }
+
+  h1 {
+    font-size: 50px;
+    margin: 0px; }
+
+  button {
+    margin-top: 10px;
+    margin-bottom: 15px; } }
+textarea {
+  min-width: 400px;
+  max-width: 800px;
+  display: inline-block;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 3px solid rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  resize: none;
+  font-size: 23px;
+  font-family: 'Inika', serif;
+  color: #34495e;
+  padding: 20px;
+  box-shadow: 0 0 100px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  margin: 10px;
+  width: 40%; }
+
+textarea:focus, input:focus, button:focus {
+  outline: 0; }
+
+body {
+  text-align: center;
+  font-family: "Raleway", sans-serif;
+  background-color: whitesmoke; }
+
+h1 {
+  font-size: 85px;
+  color: #34495e;
+  padding: 15px; }
+
+.thin {
+  font-weight: 200;
+  color: #27ae60; }

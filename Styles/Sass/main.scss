@@ -1,0 +1,26 @@
+@import 'reset';
+@import 'colorsAndFonts';
+@import 'dropDownMenu';
+@import 'button';
+@import 'mobile';
+@import 'textArea';
+
+body
+{
+	text-align:center;
+	font-family: $titleFont;
+	background-color: $offWhite;
+}
+
+h1
+{
+	font-size: 85px;
+	color:$darkBlue;
+	padding:15px;
+}
+
+.thin
+{
+	font-weight: 200;
+	color:$green;
+}
