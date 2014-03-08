@@ -1,4 +1,4 @@
-@media(max-width: 500px){
+@media(max-width: 620px){
 	textarea{
 		min-width: 0px;
 		width:85%;
@@ -13,5 +13,26 @@
 	button{
 		margin-top: 10px;
 		margin-bottom:15px;
+	}
+	#main
+	{
+		position: absolute;
+		top:0px;
+		width:100%;
+		float:left;
+		padding-left: 0px;
+	}
+
+	#options
+	{
+		width:100%;
+		position: absolute;
+		top:100%;
+		float: none;
+	}
+
+	#translator
+	{
+		padding-left: 0;
 	}
 }
