@@ -7,6 +7,7 @@ ol {
   list-style-type: none; }
 
 .menu {
+  font-family: "Raleway", sans-serif;
   display: inline-block;
   position: relative; }
   .menu li {
@@ -129,34 +130,46 @@ button:active {
     margin-top: 10px;
     margin-bottom: 15px; } }
 textarea {
-  min-width: 400px;
-  max-width: 800px;
   display: inline-block;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-bottom: 3px solid rgba(0, 0, 0, 0.3);
   border-radius: 5px;
   resize: none;
   font-size: 23px;
-  font-family: 'Inika', serif;
+  font-family: "Bitter", serif;
   color: #34495e;
   padding: 20px;
   box-shadow: 0 0 100px rgba(0, 0, 0, 0.1);
   background-color: white;
   margin: 10px;
-  width: 40%; }
+  width: 80%; }
 
 textarea:focus, input:focus, button:focus {
   outline: 0; }
 
+p {
+  text-align: left;
+  padding: 25px; }
+
 body {
   text-align: center;
-  font-family: "Raleway", sans-serif;
+  font-family: "Bitter", serif;
   background-color: whitesmoke; }
 
 h1 {
+  font-family: "Raleway", sans-serif;
   font-size: 85px;
   color: #34495e;
   padding: 15px; }
+
+h2 {
+  font-size: 40px;
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+  margin-top: 50px;
+  line-height: 10%; }
 
 .thin {
   font-weight: 200;

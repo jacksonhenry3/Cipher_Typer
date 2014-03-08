@@ -4,19 +4,34 @@
 @import 'button';
 @import 'mobile';
 @import 'textArea';
-
+p
+{
+	text-align:left;
+	padding:25px;
+}
 body
 {
 	text-align:center;
-	font-family: $titleFont;
+	font-family: $bodyFont;
 	background-color: $offWhite;
 }
 
 h1
 {
+	font-family: $titleFont;
 	font-size: 85px;
 	color:$darkBlue;
 	padding:15px;
+}
+h2
+{
+	font-size:40px;
+	font-family:$titleFont;
+	font-weight:400;
+	margin-bottom:0px;
+	padding-bottom:0px;
+	margin-top:50px;
+	line-height:10%;
 }
 
 .thin

@@ -1,20 +1,20 @@
 textarea
 {
-	min-width: 400px;
-	max-width: 800px;
+	// min-width: 400px;
+	// max-width: 800px;
 	display: inline-block;
 	border: 1px solid $dark;
 	border-bottom:3px solid $darker;
 	border-radius: 5px;
 	resize: none;
 	font-size: 23px;
-	font-family: 'Inika', serif;
+	font-family: $bodyFont;
 	color:#34495e;
 	padding:20px;
 	box-shadow: 0 0 100px $dark;
 	background-color: white;
 	margin:10px;
-	width:40%;
+	width:80%;
 }
 
 textarea:focus, input:focus, button:focus{

@@ -24,13 +24,21 @@ function init() {
 
 
 function listenForChanges(cipher,direction){
-	window.iterator =setInterval(function(){displayResult(cipher,direction)},50);
+	window.iterator =setInterval(function(){displayResult(cipher,direction)},5);
 }
 
 function changeCipher(cipher,direction){
+	if (cipher != englishToMorse)
+	{document.getElementById('listenButton').style.visibility = 'hidden';};
+	if (cipher == englishToMorse)
+	{document.getElementById('listenButton').style.visibility = 'visible';};
+
+	window.currentCipher = cipher
 	window.clearInterval(window.iterator)
 	listenForChanges(cipher,direction)
 }
+
+
 
 // ----- ciphers -----
 	// predifined library of english characters
@@ -49,12 +57,17 @@ function changeCipher(cipher,direction){
 		};
 
 	// predefined ciphers
-	englishToMorse = {" ":"\\ ","A":".- ","B":"-... ","C":"-.-. ","D":"-.. ","E":". ","F":"..-. ","G":"--. ","H":".... ","I":".. ","J":".--- ","K":"-.- ","L":".-.. ","M":"-- ","N":"-. ","O":"--- ","P":".--. ","Q":"--.- ","R":".-. ","S":"... ","T":"- ","U":"..- ","V":"...- ","W":".-- ","X":"-..- ","Y":"-.-- ","Z":"--.. ","0":"----- ","1":".---- ","2":"..--- ","3":"...-- ","4":"....- ","5":"..... ","6":"-.... ","7":"--... ","8":"---.. ","9":"----. ",".":".-.-.- ", ",":"--..-- ",":":"---... ","?":"..--.. ","'":".----. ","-":"-....- ","/":"-..-. ","|":"-.--.- ","\"":".-..-. ","@":".--.-. ","=":"-...- ","\n":"\n ","!":"!"};
+	englishToMorse = {" ":"\\ ","a":".- ","b":"-... ","c":"-.-. ","d":"-.. ","e":". ","f":"..-. ","g":"--. ","h":".... ","i":".. ","j":".--- ","k":"-.- ","l":".-.. ","m":"-- ","n":"-. ","o":"--- ","p":".--. ","q":"--.- ","r":".-. ","s":"... ","t":"- ","u":"..- ","v":"...- ","w":".-- ","x":"-..- ","y":"-.-- ","z":"--.. ","0":"----- ","1":".---- ","2":"..--- ","3":"...-- ","4":"....- ","5":"..... ","6":"-.... ","7":"--... ","8":"---.. ","9":"----. ",".":".-.-.- ", ",":"--..-- ",":":"---... ","?":"..--.. ","'":".----. ","-":"-....- ","/":"-..-. ","|":"-.--.- ","\"":".-..-. ","@":".--.-. ","=":"-...- ","\n":"\n ","!":"!"};
 
 	function invertCipher(cipher)
 	{
+		// if cipher == englishToMorse_
+		// {
+
+		// }
 		inverse = {}
 		for(var letter in cipher){
+			// console.log(letter)
 			inverse[cipher[letter]] = letter;
 		}
 
@@ -69,9 +82,9 @@ function displayResult(cipher,direction)
 		text = document.getElementById("english").value
 		code = ''
 		window.location.hash = "#"+text.replace(/ /g, '_');
-		text =  text.toUpperCase()
 		for (var i = 0; i < text.length; i++) {
-			code = code+cipher[text[i]]
+			if (cipher[text[i]].toString() != 'undefined')
+				{code = code+cipher[text[i]]}
 		};
 		document.getElementById("code").value = code
 	};
@@ -81,12 +94,33 @@ function displayResult(cipher,direction)
 		cipher = invertCipher(cipher)
 		text = document.getElementById("code").value
 		english = ''
-		text =  text.toUpperCase()
-		for (var i = 0; i < text.length; i++) {
-			english = english+cipher[text[i]]
-		};
+		if (window.currentCipher != englishToMorse)
+		{
+			for (var i = 0; i < text.length; i++) {
+				if (cipher[text[i]].toString() != 'undefined')
+			{english = english+cipher[text[i]]}
+			};
+
 		document.getElementById("english").value = english
 		window.location.hash = "#"+english.replace(/ /g, '_');
+		};
+
+		if (window.currentCipher === englishToMorse)
+		{
+			word = ''
+			for (var i = 0; i < text.length; i++) {
+				word+=text[i]
+				if (word[word.length-1] === ' ')
+					{
+					if (cipher[word].toString() != 'undefined')
+						{english = english+cipher[word]}
+					word = ''
+					}
+			};
+
+			document.getElementById("english").value = english
+			window.location.hash = "#"+english.replace(/ /g, '_');
+		};
 	};
 };
 
@@ -112,11 +146,11 @@ function displayResult(cipher,direction)
 			for (var i = 0; i < Morse.length; i++) {
 				if (Morse[i] === '.')
 				{
-					note(Begining+i*.13*n,.03*n,440)
+					note(Begining+i*.13*n,.03*n,1000)
 				};
 				if (Morse[i] === '-')
 				{
-					note(Begining+i*.13*n,.09*n,440)
+					note(Begining+i*.13*n,.09*n,1000)
 				};
 				if (Morse[i] === ' ')
 				{
@@ -124,38 +158,36 @@ function displayResult(cipher,direction)
 				};
 				if (Morse[i] === '\\')
 				{
-					note(Begining+i*.1*n,.09*n,0)
+					note(Begining+i*.13*n,.09*n,0)
 				};
 			};
-			window.setTimeout(function(){document.getElementById("listen").innerHTML = 'Listen'},Morse.length*.13*n*1000)
+			window.setTimeout(function(){document.getElementById("listenButton").innerHTML = 'Listen'},Morse.length*.13*n*1000)
 			}
+
+			else
+				{}
 		}
 
 
-setInterval(
-	function()
-	{
-		var textBox = document.getElementById ("english");
-			if (textBox.addEventListener) {
-			textBox.addEventListener
-				(
-					"DOMActivate",
-					function(){changeCipher(window.currentCipher,'encode')},
-					false
-				);
-		}
 
-		
-			var textBox = document.getElementById ("code");
-			if (textBox.addEventListener) 
-			{
-				textBox.addEventListener 
-					(
-						"DOMActivate", 
-						function(){changeCipher(window.currentCipher,'decode')},
-		 				false
-		 			);
-			}
-	},
-	100
-)
+var textBox = document.getElementById ("english");
+if (textBox.addEventListener) {
+textBox.addEventListener
+	(
+		"DOMActivate",
+		function(){changeCipher(window.currentCipher,'encode')},
+		false
+	);
+}
+
+
+var textBox = document.getElementById ("code");
+if (textBox.addEventListener) 
+{
+	textBox.addEventListener 
+		(
+			"DOMActivate", 
+			function(){changeCipher(window.currentCipher,'decode')},
+				false
+			);
+}
