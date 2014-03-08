@@ -29,9 +29,9 @@ function listenForChanges(cipher,direction){
 
 function changeCipher(cipher,direction){
 	if (cipher != englishToMorse)
-	{document.getElementById('listenButton').style.visibility = 'hidden';};
+	{document.getElementById('listenButton').style.display = 'none';};
 	if (cipher == englishToMorse)
-	{document.getElementById('listenButton').style.visibility = 'visible';};
+	{document.getElementById('listenButton').style.display = 'inline-block';};
 
 	window.currentCipher = cipher
 	window.clearInterval(window.iterator)
@@ -81,7 +81,7 @@ function displayResult(cipher,direction)
 	if (direction === 'encode') {
 		text = document.getElementById("english").value
 		code = ''
-		window.location.hash = "#"+text.replace(/ /g, '_');
+		// window.location.hash = "#"+text.replace(/ /g, '_');
 		for (var i = 0; i < text.length; i++) {
 			if (cipher[text[i]].toString() != 'undefined')
 				{code = code+cipher[text[i]]}
@@ -191,3 +191,11 @@ if (textBox.addEventListener)
 				false
 			);
 }
+
+
+
+
+
+
+
+

@@ -188,7 +188,10 @@ button:active {
     float: none; }
 
   #translator {
-    padding-left: 0; } }
+    padding-left: 0; }
+
+  #github {
+    display: none; } }
 textarea {
   max-width: 500px;
   display: inline-block;
@@ -218,6 +221,7 @@ body {
   background-color: whitesmoke; }
 
 h1 {
+  z-index: -1;
   font-family: "Raleway", sans-serif;
   font-size: 85px;
   color: #34495e;

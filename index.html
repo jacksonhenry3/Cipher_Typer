@@ -7,15 +7,16 @@
 	<link rel="shortcut icon" href="images/favicon.ico">
 	<title>Cipher Typer</title>
 	<link href='http://fonts.googleapis.com/css?family=Raleway:200,400,800' rel='stylesheet' type='text/css'>
-	<!-- <link href='http://fonts.googleapis.com/css?family=Inika' rel='stylesheet' type='text/css'> -->
-	<!-- <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'> -->
-	<link rel='stylesheet' href='Styles/Sass/main.css'>
-	<!-- <link rel='stylesheet' href='temp.css'> -->
-	<script type="text/javascript" src = 'drop.js'></script>
+	<link rel='stylesheet' href='Styles/main.css'>
+	<script type="text/javascript" src = 'scripts/drop.js'></script>
+	<script type="text/javascript" src = 'scripts/share.js'></script>
 </head>
 <body>
+<a  id = 'github' href="https://github.com/jacksonhenry3" style = 'z-index:500;'><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://github-camo.global.ssl.fastly.net/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
 
-<!-- <div id = 'options'>
+<div id = 'main'>
+
+<div id = 'options'>
 	<ul id = 'cipherChoser' class="menu" onclick = "openClose(this)">
 	    <li >
 	      <span class = 'title' >Pick a Cipher</span>
@@ -46,59 +47,29 @@
 		</p>
 	</div>
 	</div>
-</div> -->
+</div>
+
+<div id = 'translator'>
+	<h1>Cipher<span class = 'thin green'> Typer</span></h1>
+	
 
 
-<div id = 'main'>
+	<textarea id="english" rows="6">english to code</textarea>
 
-	<div id = 'options'>
-		<ul id = 'cipherChoser' class="menu" onclick = "openClose(this)">
-		    <li >
-		      <span class = 'title' >Pick a Cipher</span>
-
-		        <ul class="sub-menu">
-		            <li onclick = "morseClick()">
-		                Morse Code
-		            </li>
-		            <li onclick = "shiftClick()">
-		                Shift Cipher
-		            </li>
-		            <li>
-		                Rolling (coming soon)
-		            </li>
-		            <li>
-		                Vigen&eacute;re (coming soon)
-		            </li>
-		        </ul>
-		    </li>
-		</ul>
-		<div id = 'about'>
-			<h2>About</h2>
-			<p>This is the cipher typer. Type English in the top box and your text appears translated by the cipher chosen above. Type ciphered text in the bottom box and it is translated back to English. If a letter you entered isn't defined by the chosen cipher nothing will happen</p>
-
-		<div id = 'cipherDesc'>
-			<h2>Morse Code</h2>
-			<p>Morse code is a method of transmitting text information as a series of on-off tones, lights, or clicks that can be directly understood by a skilled listener or observer without special equipment<a href = 'http://en.wikipedia.org/wiki/Morse_code'>...</a> 
-			</p>
-		</div>
-		</div>
+	<textarea id="code" rows="6"></textarea>
+	<br>
+	<button type="button" id = 'listenButton' onclick="listen()">Listen</button>
+	<button type="button" id = 'shareButton' onclick="share()">Share</button>
+	<div id = 'shareURL'>
+		<textarea id = 'url'>click share to generate a url to share your</textarea>
 	</div>
-
-	<div id = 'translator'>
-		<h1>Cipher<span class = 'thin green'> Typer</span></h1>
-		
-
-
-		<textarea id="english" rows="6">english to code</textarea>
-
-		<textarea id="code" rows="6"></textarea>
-		<br>
-		<button type="button" id = 'listenButton' onclick="listen()">Listen</button>
-	</div>
+</div>
 </div>
 
 
-</body>
-<script type="text/javascript" src = 'translate.js'></script>
 
+</body>
+<script type="text/javascript" src = 'scripts/translate.js'></script>
+<style type="text/css">
+</style>
 </html>
