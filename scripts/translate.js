@@ -7,7 +7,7 @@ function init() {
 		context = new AudioContext();
 	}
 	catch(e) {
-		alert('Sorry, your browser doesnt support the "play" button :(');
+		alert('Sorry, your browser doesnt support the "play" button :( \n try the latest firefox or chrome');
 	}
 
 	initial_val = document.getElementById("english").value
@@ -20,6 +20,29 @@ function init() {
 	window.currentCipher = englishToMorse
 
 	listenForChanges(currentCipher,'encode')
+
+	var textBox = document.getElementById ("english");
+if (textBox.addEventListener) {
+textBox.addEventListener
+	(
+		"DOMActivate",
+		function(){changeCipher(window.currentCipher,'encode')},
+		false
+	);
+}
+
+
+var textBox = document.getElementById ("code");
+if (textBox.addEventListener) 
+{
+	textBox.addEventListener 
+		(
+			"DOMActivate", 
+			function(){changeCipher(window.currentCipher,'decode')},
+				false
+			);
+}
+
 }
 
 
@@ -170,27 +193,6 @@ function displayResult(cipher,direction)
 
 
 
-var textBox = document.getElementById ("english");
-if (textBox.addEventListener) {
-textBox.addEventListener
-	(
-		"DOMActivate",
-		function(){changeCipher(window.currentCipher,'encode')},
-		false
-	);
-}
-
-
-var textBox = document.getElementById ("code");
-if (textBox.addEventListener) 
-{
-	textBox.addEventListener 
-		(
-			"DOMActivate", 
-			function(){changeCipher(window.currentCipher,'decode')},
-				false
-			);
-}
 
 
 
