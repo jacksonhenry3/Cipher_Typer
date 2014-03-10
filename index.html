@@ -18,16 +18,16 @@
 <div id = 'main'>
 
 <div id = 'options'>
-	<ul id = 'cipherChoser' class="menu" onclick = "openClose(this)">
-	    <li >
-	      <span class = 'title' >Pick a Cipher</span>
+	<ul id = 'cipherChoser' class="menu" >
+	    <li>
+	      <span class = 'title' onclick = "openClose('cipherChoser')">Pick a Cipher</span>
 
 	        <ul class="sub-menu">
 	            <li onclick = "morseClick()">
 	                Morse Code
 	            </li>
 	            <li onclick = "shiftClick()">
-	                Shift 10 Cipher
+	                Shift <input style="width: 40px;margin:5px;" id = 'n' value = 0 type = 'number'></input> Cipher
 	            </li>
 	            <li>
 	                Rolling (coming soon)

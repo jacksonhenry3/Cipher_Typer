@@ -165,7 +165,7 @@ function displayResult(cipher,direction)
 			document.getElementById("listenButton").innerHTML = 'playing';
 			Morse = document.getElementById("code").value
 			Begining = context.currentTime;
-			n=1
+			n=3
 			for (var i = 0; i < Morse.length; i++) {
 				if (Morse[i] === '.')
 				{
